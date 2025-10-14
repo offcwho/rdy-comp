@@ -1,0 +1,11 @@
+.input {
+    position: relative;
+}
+
+.input-label {
+    position: absolute;
+    top: 25%;
+    left: 15px;
+    border-radius: 10px;
+
+}
