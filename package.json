@@ -1,6 +1,6 @@
 {
   "name": "rdy-comp",
-  "version": "1.0.56",
+  "version": "1.0.69",
   "description": "Components Package",
   "repository": {
     "type": "git",
@@ -42,8 +42,6 @@
     "motion": "^12.23.24",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "sass": "^1.93.2",
-    "tailwind": "^4.0.0",
-    "tailwindcss": "^3.4.18"
+    "react-router-dom": "^7.9.4"
   }
 }
