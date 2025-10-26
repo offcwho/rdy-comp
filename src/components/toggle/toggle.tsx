@@ -62,9 +62,9 @@ export const Toggle: React.FC<Props> = React.forwardRef(({
                 onChange={(e) => setIsChecked(e.target.checked)}
                 className={input}
             />
-            <div className={`${toggle}`}>
+            <div className={`${toggle} ${className}`}>
                 <motion.div
-                    className={`${item} ${className}`}
+                    className={`${item}`}
                     animate={{
                         x: isChecked ? 24 : 0
                     }}
