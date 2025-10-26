@@ -19,6 +19,8 @@ export const Toggle: React.FC<Props> = React.forwardRef(({
 }, ref) => {
     const [isChecked, setIsChecked] = useState(false);
 
+    console.log(isChecked);
+
     const label = css`
         display:flex;
         align-items: center;
