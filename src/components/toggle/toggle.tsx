@@ -29,7 +29,8 @@ export const Toggle: React.FC<Props> = React.forwardRef(({
     `
 
     const input = css`
-        visibility: hidden
+        visibility: hidden;
+        width: 0;
     `;
 
     const toggle = css`
