@@ -38,8 +38,8 @@ export const Toggle: React.FC<Props> = React.forwardRef(({
         height: 2rem;
         border-radius: calc(infinity * 1px);
         background-color: ${(isChecked && background?.enabled)
-            ? background.enabled
-            : background?.disabled
+            ? background.enabled + '!important'
+            : background?.disabled + '!important'
                 ? '#00c950' : '#d1d5dc'};
     `
 
