@@ -12,12 +12,10 @@ export const Button: React.FC<Props> = (
         whileTap,
         whileHover,
         className,
-        ...props
     }) => {
 
     return (
         <motion.button
-            {...props}
             className={`${buttonStyle.button({ backgroundColor, color, radius })} ${className}`}
             whileTap={{
                 scale: 0.90,
@@ -32,6 +30,7 @@ export const Button: React.FC<Props> = (
                 damping: 25,
                 stiffness: 300
             }}
+            type="submit"
         >
             {children}
         </motion.button>

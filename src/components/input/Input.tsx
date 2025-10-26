@@ -10,6 +10,10 @@ interface Props {
     className?: string;
     id: string;
     label?: string;
+    labelColor?: {
+        onBlur?: string;
+        onFocus?: string;
+    };
     error?: string;
     bordered?: {
         onFocus?: string,
@@ -21,6 +25,7 @@ interface Props {
         onBlur?: string,
     };
     value?: string;
+    defaultValue?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     ref?: React.Ref<HTMLInputElement>;
 }
@@ -32,11 +37,13 @@ export const Input: React.FC<Props> = React.forwardRef((
         className,
         id,
         label,
+        labelColor,
         error,
         bordered,
         rounded,
         backgroundColor,
         value: externalValue,
+        defaultValue,
         onChange: externalOnChange,
         ...props
     }, ref) => {
@@ -123,8 +130,12 @@ export const Input: React.FC<Props> = React.forwardRef((
                         fontSize: isFocused || internalValue ? '13px' : '14px',
                         color: error ? 'rgba(243, 18, 102, 1)'
                             : isFocused || internalValue
-                                ? '#5c5c5c'
-                                : '#9c9c9c',
+                                ? labelColor?.onFocus || '#5c5c5c'
+                                    : (labelColor && !isFocused)
+                                        ? labelColor.onBlur
+                                        : (isFocused)
+                                            ? '#5c5c5c'
+                                            : '#9c9c9c',
                     }}
                     transition={{
                         duration: 0.15,
@@ -140,6 +151,7 @@ export const Input: React.FC<Props> = React.forwardRef((
                     {...props}
                     className={`${inputStyles} ${className || ''}`}
                     value={internalValue}
+                    defaultValue={defaultValue}
                     animate={{
                         x: error ? [0, -10, 10, -10, 10, 0] : 0,
                         borderColor: error

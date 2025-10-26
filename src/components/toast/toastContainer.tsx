@@ -15,12 +15,15 @@ export default function ToastContainer({ toasts, removeToast }: ToastContainerPr
         position: fixed;
         bottom: 1rem;
         right: 1rem;
-        z-index: 50;
+        z-index: 9999;
         width: 100%;
         max-width: 360px;
     `
 
     const style = (type?: string) => css`
+        padding-inline: 1rem;
+        padding-block: .75rem;
+        border-radius: .75rem;
         display: flex;
         align-items: center;
         background-color: ${type === "success" ? 'color-mix(in oklab,hsl(145.96 79.46% 43.92%/1)20%,transparent)'
@@ -63,14 +66,7 @@ export default function ToastContainer({ toasts, removeToast }: ToastContainerPr
                         initial={{ opacity: 0, x: 50 }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: 50 }}
-                        className={`${style(toast.type)} px-4 py-3 rounded-2xl shadow-md text-white ${toast.type === "success"
-                            ? "bg-green-500"
-                            : toast.type === "error"
-                                ? "bg-red-500"
-                                : toast.type === "warning"
-                                    ? "bg-yellow-500"
-                                    : "bg-blue-500"
-                            }`}
+                        className={style(toast.type)}
                         onClick={() => removeToast(toast.id)}
                     >
                         {toast.icon ? (
