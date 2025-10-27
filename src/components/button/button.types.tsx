@@ -7,4 +7,5 @@ export interface Props {
     whileTap?: {};
     whileHover?: {};
     className?: string;
+    onClick?: () => void;
 }
