@@ -78,7 +78,7 @@ export const Modal: React.FC<Props> = ({
         overflow: hidden;
         max-height: 90vh;
         overflow-y: auto;
-        max-width: ${width || '600px'}
+        max-width: ${width || '600px'};
         display: flex;
         flex-direction: column;
     `;
