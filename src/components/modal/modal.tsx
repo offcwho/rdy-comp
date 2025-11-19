@@ -79,6 +79,8 @@ export const Modal: React.FC<Props> = ({
         max-height: 90vh;
         overflow-y: auto;
         max-width: ${width || '600px'}
+        display: flex;
+        flex-direction: column;
     `;
 
     const modalHeader = css`
@@ -119,6 +121,7 @@ export const Modal: React.FC<Props> = ({
         padding: 0 30px 30px;
         color: #4a5568;
         line-height: 1.7;
+        height: 100%;
     `;
 
     return (

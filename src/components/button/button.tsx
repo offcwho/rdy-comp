@@ -12,6 +12,7 @@ export const Button: React.FC<Props> = (
         whileTap,
         whileHover,
         className,
+        onClick,
         ...props
     }) => {
 
