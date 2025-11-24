@@ -10,6 +10,7 @@ interface Props {
     className?: string;
     id: string;
     label?: string;
+    name?: string;
     labelColor?: {
         onBlur?: string;
         onFocus?: string;
@@ -40,6 +41,7 @@ export const Input: React.FC<Props> = React.forwardRef((
         labelColor,
         error,
         bordered,
+        name,
         rounded,
         backgroundColor,
         value: externalValue,
@@ -131,11 +133,11 @@ export const Input: React.FC<Props> = React.forwardRef((
                         color: error ? 'rgba(243, 18, 102, 1)'
                             : isFocused || internalValue
                                 ? labelColor?.onFocus || '#5c5c5c'
-                                    : (labelColor && !isFocused)
-                                        ? labelColor.onBlur
-                                        : (isFocused)
-                                            ? '#5c5c5c'
-                                            : '#9c9c9c',
+                                : (labelColor && !isFocused)
+                                    ? labelColor.onBlur
+                                    : (isFocused)
+                                        ? '#5c5c5c'
+                                        : '#9c9c9c',
                     }}
                     transition={{
                         duration: 0.15,
