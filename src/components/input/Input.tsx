@@ -150,6 +150,7 @@ export const Input: React.FC<Props> = React.forwardRef((
                     id={id}
                     ref={ref}
                     type={type}
+                    name={name}
                     {...props}
                     className={`${inputStyles} ${className || ''}`}
                     value={internalValue}

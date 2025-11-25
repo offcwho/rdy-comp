@@ -56,7 +56,7 @@ export const Modal: React.FC<Props> = ({
     }, [isOpen, id]);
 
     const modalOverlay = css`
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         right: 0;
@@ -65,7 +65,7 @@ export const Modal: React.FC<Props> = ({
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 9999;
+        z-index: 1000000;
         padding: 20px;
     `;
 
@@ -81,6 +81,7 @@ export const Modal: React.FC<Props> = ({
         max-width: ${width || '600px'};
         display: flex;
         flex-direction: column;
+        z-index: 1000000;
     `;
 
     const modalHeader = css`
