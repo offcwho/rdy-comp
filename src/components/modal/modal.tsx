@@ -56,7 +56,7 @@ export const Modal: React.FC<Props> = ({
     }, [isOpen, id]);
 
     const modalOverlay = css`
-        position: absolute;
+        position: fixed;
         top: 0;
         left: 0;
         right: 0;
