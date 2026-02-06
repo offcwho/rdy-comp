@@ -127,9 +127,9 @@ export const Input: React.FC<Props> = React.forwardRef((
                     className={labelStyles}
                     initial={{ y: 0, fontSize: '16px' }}
                     animate={{
-                        y: isFocused || internalValue ? -31 : 0,
+                        y: isFocused || internalValue ? -36 : 0,
                         left: isFocused || internalValue ? '.25rem' : '.75rem',
-                        fontSize: isFocused || internalValue ? '13px' : '14px',
+                        fontSize: isFocused || internalValue ? '16px' : '18px',
                         color: error ? 'rgba(243, 18, 102, 1)'
                             : isFocused || internalValue
                                 ? labelColor?.onFocus || '#5c5c5c'
